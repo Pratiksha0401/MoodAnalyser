@@ -3,7 +3,7 @@ package com.MoodAnalyzer.MoodAnalysis;
 public class MoodAnalyzer 
 {
 
-	public String analyseMood(String message) throws Exception {
+	public String analyseMood(String message) {
 		if(message.contains("Sad")) {
 			System.out.println("SAD");
 			return "SAD";
