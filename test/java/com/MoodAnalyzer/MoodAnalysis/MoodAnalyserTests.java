@@ -2,15 +2,17 @@ package com.MoodAnalyzer.MoodAnalysis;
 
 import static org.junit.Assert.*;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 public class MoodAnalyserTests 
-{
-	MoodAnalyzer moodanalyzer=new MoodAnalyzer();
-    @Test
-    public void testMoodAnalyzer_anyMOod_shouldReturn_Happy()
-    {
-    	String mood=moodanalyzer.analyseMood("I am in Any Mood");
-        assertEquals("HAPPY",mood);
+{	
+	@Test
+    public void testMoodAnalyzer_Constructor_SadMessage_shouldReturn_SAD()
+    {	
+		String mood=MoodAnalyzer.MoodAnalyzer();
+		System.out.println(mood);
+        assertEquals("SAD",mood);
     }
+    
 }
