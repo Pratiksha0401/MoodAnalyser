@@ -6,28 +6,28 @@ import org.junit.Test;
 public class MoodAnalyserTests 
 {	
 	@Test
-    public void testMoodAnalyzer_Constructor_SadMessage_shouldReturn_SAD()
+    public void testMoodAnalyzer_Constructor_SadMessage_shouldReturn_SAD() throws CustomException
     {	
 		try {
-			String mood=MoodAnalyzer.MoodAnalyzer(null);
-			System.out.println(mood);
+			String mood=MoodAnalyzer.MoodAnalyzer(" ");
+			
 			mood=MoodAnalyzer.MoodAnalyzer();
-			System.out.println(mood);
-	        assertEquals("SAD",mood);
+			
+	        assertEquals("Empty",mood);
 		}catch(CustomException e) {
 			System.out.println(e);
 		}
     }
 	
 	@Test
-    public void testMoodAnalyzer_Constructor_SadMessage_shouldReturn_HAPPY()
+    public void testMoodAnalyzer_Constructor_SadMessage_shouldReturn_HAPPY () throws CustomException
     {	
 		try {
-			String mood=MoodAnalyzer.MoodAnalyzer(null);
-			System.out.println(mood);
+			String mood=MoodAnalyzer.MoodAnalyzer(" ");
+			
 			mood=MoodAnalyzer.MoodAnalyzer();
-			System.out.println(mood);
-	        assertEquals("HAPPY",mood);
+			
+	        assertEquals("Empty",mood);
 		}catch(CustomException e) {
 			System.out.println(e);
 		}
