@@ -2,36 +2,40 @@ package com.MoodAnalyzer.MoodAnalysis;
 
 import java.util.*;
 
+import com.MoodAnalyzer.MoodAnalysis.MoodAnalyserException.Code;
+
 public class MoodAnalyzer 
 {	
-	public static String MoodAnalyzer() throws CustomException {
-		String message=" ";
-		try{
-			if(message==" ")
-				return "Empty";
-			else
-				return "HAPPY";
-		}catch(NullPointerException e){
-			throw new CustomException("Empty Mood.....Enter valid Mood");
-		}
+	public String message;
+	public MoodAnalyzer() {
+		
+		
 	}
 	
-	public static String MoodAnalyzer(String message) throws CustomException {
+	public MoodAnalyzer(String message) throws MoodAnalyserException {
+		super();
+		this.message=message;
+		
+	}
+	
+	public String analyseMood() throws Exception {
 		try{
-			if(message==" ")
-				return "Empty";
-			else
-				return "HAPPY";
+			if(message==null)
+				throw new MoodAnalyserException(Code.NULL,"Null Mood");
+			else if(message.trim().isEmpty())
+				throw new MoodAnalyserException(Code.EMPTY,"Empty Mood");
+			else if(message.toLowerCase().contains("sad")) {
+				System.out.println("SAD");
+				return "SAD";}
+			else if(message.toLowerCase().contains("happy")) {
+				System.out.println("HAPPY");
+				return "HAPPY";	}
 		}catch(NullPointerException e){
-			throw new CustomException("Empty Mood.....Enter valid mood ");
+			throw new MoodAnalyserException(Code.INVALID,"Empty Mood.....Enter valid Mood");
 		}
+		return null;
 	}
 }	
 
-	class CustomException extends Exception{
-		public CustomException(String message) {
-		   super(message);
-		}
-	}
 	
 
